@@ -12,7 +12,7 @@ namespace GrindStone.Models
         [Key]
 
         public int TaskId { get; set; }
-
+        
         [ForeignKey("Jobs")]
         public int JobId { get; set; }
         public virtual Jobs Jobs { get; set; }
