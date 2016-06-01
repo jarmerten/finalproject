@@ -17,10 +17,6 @@ namespace GrindStone.Models
         public int JobId { get; set; }
         public virtual Jobs Jobs { get; set; }
 
-        [ForeignKey("RegisterViewModel")]
-        public int BusinessId { get; set; }
-        public virtual RegisterViewModel RegisterViewModel { get; set; }
-
         [Required]
         [Display(Name = "Task Title")]
         public string Title { get; set; }
@@ -35,15 +31,5 @@ namespace GrindStone.Models
         [Required]
         [Display(Name = "Days Long")]
         public int TaskLength { get; set; }
-
-
-
-
-
-
-
-
-
-
     }
 }
