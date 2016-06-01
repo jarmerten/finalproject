@@ -20,5 +20,12 @@ namespace GrindStone.Models
         public int BusinessId { get; set; }
         public virtual RegisterViewModel RegisterViewModel { get; set; }
 
+        public string Title { get; set; }
+
+        public string Desciption { get; set; }
+
+        public int LocationOnPage { get; set; }
+
+
     }
 }
