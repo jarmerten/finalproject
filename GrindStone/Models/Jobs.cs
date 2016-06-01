@@ -34,7 +34,7 @@ namespace GrindStone.Models
         [Display(Name = "Customer Email")]
         public string Email { get; set; }
 
-        [Required, StringLength(10000), Display(Name = "Product Description"), DataType(DataType.MultilineText)]
+        [Required, StringLength(10000), Display(Name = "Job Description"), DataType(DataType.MultilineText)]
         public string Description { get; set; }
     }
 }

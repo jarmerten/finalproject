@@ -45,5 +45,7 @@ namespace GrindStone.Models
         {
             return new ApplicationDbContext();
         }
+
+        public System.Data.Entity.DbSet<GrindStone.Models.RegisterViewModel> RegisterViewModels { get; set; }
     }
 }
