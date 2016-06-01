@@ -151,7 +151,7 @@ namespace GrindStone.Controllers
         {
             if (ModelState.IsValid)
             {
-                var user = new ApplicationUser { UserName = model.Email, Email = model.Email };
+                var user = new ApplicationUser { UserName = model.Email, BusinessId = model.BusinessId, BusinessName = model.BusinessName, Profession = model.Profession, Employees = model.Employees, Address = model.Address, AmazonEmail = model.AmazonEmail, AmazonPassword = model.AmazonPassword, PhoneNumber = model.PhoneNumber, Email = model.Email };
                 var result = await UserManager.CreateAsync(user, model.Password);
                 if (result.Succeeded)
                 {

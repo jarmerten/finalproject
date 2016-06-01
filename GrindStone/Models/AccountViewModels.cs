@@ -64,6 +64,9 @@ namespace GrindStone.Models
 
     public class RegisterViewModel
     {
+        public int id { get; set; }
+        public int BusinessId { get; set; }
+
         [Required]
         [EmailAddress]
         [Display(Name = "Email")]

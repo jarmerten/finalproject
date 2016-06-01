@@ -14,7 +14,6 @@ namespace GrindStone.Models
         public string Profession { get; set; }
         public string Employees { get; set; }
         public string Address { get; set; }
-        public string PhoneNumber { get; set; }
         public string AmazonEmail { get; set; }
         public string AmazonPassword { get; set; }
 
