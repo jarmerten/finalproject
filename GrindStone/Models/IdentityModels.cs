@@ -24,7 +24,19 @@ namespace GrindStone.Models
             : base("DefaultConnection", throwIfV1Schema: false)
         {
         }
+        public DbSet<RegisterViewModel> RegisterViewModel { get; set; }
+        public DbSet<Jobs> Jobs { get; set; }
+        public DbSet<CustomWorkOrderSections> CustomWorkOrderSections { get; set; }
+        public DbSet<CustomWorkOrderForJob> CustomWorkOrderForJob { get; set; }
+        public DbSet<Tasks> Tasks { get; set; }
+        public DbSet<FinishedTask> FinishedTask { get; set; }
+        public DbSet<ConnectedJobs> ConnectedJobs { get; set; }
+        public DbSet<Alert> Alert { get; set; }
+        public DbSet<Products> Products { get; set; }
+        public DbSet<CustomTemplates> CustomTemplates { get; set; }
 
+        public DbSet<Farmers> Farmer { get; set; }
+        public DbSet<Farmers> Farmer { get; set; }
         public static ApplicationDbContext Create()
         {
             return new ApplicationDbContext();
