@@ -7,7 +7,7 @@ using System.Web;
 
 namespace GrindStone.Models
 {
-    public class Task
+    public class Tasks
     {
         [Key]
 

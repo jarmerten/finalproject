@@ -12,9 +12,9 @@ namespace GrindStone.Models
         [Key]
         public int FinishedTaskId { get; set; }
 
-        [ForeignKey("Task")]
+        [ForeignKey("Tasks")]
         public int TaskId { get; set; }
-        public virtual Task Task { get; set; }
+        public virtual Tasks Tasks { get; set; }
 
         [Display(Name = "Comments")]
         public string Comments { get; set; }
@@ -24,6 +24,5 @@ namespace GrindStone.Models
         public int FinishDate { get; set; }
 
         public bool approval { get; set; }
-
     }
 }

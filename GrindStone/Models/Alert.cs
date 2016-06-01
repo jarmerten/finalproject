@@ -12,9 +12,9 @@ namespace GrindStone.Models
         [Key]
         public int AlertId { get; set; }
 
-        [ForeignKey("Task")]
+        [ForeignKey("Tasks")]
         public int TaskId { get; set; }
-        public virtual Task Task { get; set; }
+        public virtual Tasks Tasks { get; set; }
 
         [Required]
         [Display(Name = "Alert Type")]

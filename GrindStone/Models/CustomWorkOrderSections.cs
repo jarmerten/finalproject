@@ -18,8 +18,5 @@ namespace GrindStone.Models
 
         [Required, StringLength(50), Display(Name = "Section Title")]
         public string Title { get; set; }
-
-
-
     }
 }
