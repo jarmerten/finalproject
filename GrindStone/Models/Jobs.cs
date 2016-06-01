@@ -25,7 +25,6 @@ namespace GrindStone.Models
         public string Address { get; set; }
 
         [Required]
-        [EmailAddress]
         [Display(Name = "Customer Phone Number")]
         public int PhoneNumber { get; set; }
 

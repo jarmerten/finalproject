@@ -24,6 +24,7 @@
                     @if (Request.IsAuthenticated)
                     {
                     <li>@Html.ActionLink("Home", "Index", "Home")</li>
+                    <li>@Html.ActionLink("New Job", "Create", "Jobs")</li>
                     }
                     else
                     {
