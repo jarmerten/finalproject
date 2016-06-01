@@ -70,6 +70,32 @@ namespace GrindStone.Models
         public string Email { get; set; }
 
         [Required]
+        [Display(Name = "Business Name")]
+        public string BusinessName { get; set; }
+
+        [Required]
+        [Display(Name = "Profession")]
+        public string Profession { get; set; }
+
+        [Required]
+        [Display(Name = "Total number of Employees")]
+        public string Employees { get; set; }
+
+        [Required]
+        [Display(Name = "Address")]
+        public string Address { get; set; }
+
+        [Required]
+        [Display(Name = "Phone Number")]
+        public string PhoneNumber { get; set; }
+
+        [Display(Name = "Amazon Email Address")]
+        public string AmazonEmail { get; set; }
+
+        [Display(Name = "Amazon Password")]
+        public string AmazonPassword { get; set; }
+
+        [Required]
         [StringLength(100, ErrorMessage = "The {0} must be at least {2} characters long.", MinimumLength = 6)]
         [DataType(DataType.Password)]
         [Display(Name = "Password")]
