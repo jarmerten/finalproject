@@ -105,5 +105,10 @@ namespace GrindStone
         {
             return new ApplicationSignInManager(context.GetUserManager<ApplicationUserManager>(), context.Authentication);
         }
+
+        internal ApplicationUser FindById(object p)
+        {
+            throw new NotImplementedException();
+        }
     }
 }
