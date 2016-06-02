@@ -16,6 +16,10 @@ namespace GrindStone.Models
         public string Id { get; set; }
         public virtual ApplicationUser ApplicationUser { get; set; }
 
+        [Required]
+        [Display(Name = "Section Title")]
+        public string SectionTitle { get; set; }
+
         [Required, StringLength(50), Display(Name = "Section Title")]
         public string Title { get; set; }
     }

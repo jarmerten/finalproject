@@ -17,7 +17,9 @@ namespace GrindStone.Models
         public string Id { get; set; }
         public virtual ApplicationUser ApplicationUser { get; set; }
 
-        [Required, StringLength(50), Display(Name = "Title")]
+
+
+        [Required, StringLength(50), Display(Name = "Template Name")]
         public string TemplateName { get; set; }
         public int Location { get; set; }
     }
