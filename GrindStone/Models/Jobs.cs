@@ -12,9 +12,9 @@ namespace GrindStone.Models
         [Key]
         public int JobId { get; set; }
 
-        [ForeignKey("RegisterViewModel")]
-        public int BusinessId { get; set; }
-        public virtual RegisterViewModel RegisterViewModel { get; set; }
+        [ForeignKey("ApplicationUser")]
+        public string Id { get; set; }
+        public virtual ApplicationUser ApplicationUser { get; set; }
 
         [Required]
         [Display(Name = "Customer Name")]
@@ -26,7 +26,7 @@ namespace GrindStone.Models
 
         [Required]
         [Display(Name = "Customer Phone Number")]
-        public int PhoneNumber { get; set; }
+        public string PhoneNumber { get; set; }
 
         [Required]
         [EmailAddress]

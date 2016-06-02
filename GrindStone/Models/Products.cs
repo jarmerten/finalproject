@@ -12,9 +12,9 @@ namespace GrindStone.Models
         [Key]
         public int ProductID { get; set; }
 
-        [ForeignKey("RegisterViewModel")]
-        public int BusinessId { get; set; }
-        public virtual RegisterViewModel RegisterViewModel { get; set; }
+        [ForeignKey("ApplicationUser")]
+        public string Id { get; set; }
+        public virtual ApplicationUser ApplicationUser { get; set; }
 
         [Required, StringLength(50), Display(Name = "Name")]
         public string ProductName { get; set; }

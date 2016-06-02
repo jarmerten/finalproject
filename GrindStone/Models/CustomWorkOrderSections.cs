@@ -12,9 +12,9 @@ namespace GrindStone.Models
         [Key]
         public int SectionId { get; set; }
 
-        [ForeignKey("RegisterViewModel")]
-        public int BusinessId { get; set; }
-        public virtual RegisterViewModel RegisterViewModel { get; set; }
+        [ForeignKey("ApplicationUser")]
+        public string Id { get; set; }
+        public virtual ApplicationUser ApplicationUser { get; set; }
 
         [Required, StringLength(50), Display(Name = "Section Title")]
         public string Title { get; set; }
