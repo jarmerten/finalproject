@@ -7,18 +7,24 @@ using System.Net;
 using System.Web;
 using System.Web.Mvc;
 using GrindStone.Models;
+using Microsoft.AspNet.Identity.Owin;
+using Microsoft.AspNet.Identity;
 
 namespace GrindStone.Controllers
 {
     public class CustomWorkOrderSectionsController : Controller
     {
         private ApplicationDbContext db = new ApplicationDbContext();
+        protected ApplicationDbContext ApplicationDbContext { get; set; }
+        protected UserManager<ApplicationUser> UserManager { get; set; }
 
         // GET: CustomWorkOrderSections
         public ActionResult Index()
         {
-            var customWorkOrderSections = db.CustomWorkOrderSections.Include(c => c.ApplicationUser);
-            return View(customWorkOrderSections.ToList());
+            string currentUserId = User.Identity.GetUserId();
+            ApplicationUser currentUser = db.Users.FirstOrDefault(x => x.Id == currentUserId);
+            var customWorkOrderSections = db.CustomWorkOrderSections.ToList().Where(c => c.ApplicationUser == currentUser);
+            return View(customWorkOrderSections);
         }
 
         // GET: CustomWorkOrderSections/Details/5
