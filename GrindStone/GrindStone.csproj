@@ -168,7 +168,6 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Controllers\AccountController.cs" />
-    <Compile Include="Controllers\CustomTemplatesController.cs" />
     <Compile Include="Controllers\CustomWorkOrderSectionsController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\JobsController.cs" />
@@ -257,11 +256,6 @@
     <Content Include="Views\CustomWorkOrderSections\Details.cshtml" />
     <Content Include="Views\CustomWorkOrderSections\Edit.cshtml" />
     <Content Include="Views\CustomWorkOrderSections\Index.cshtml" />
-    <Content Include="Views\CustomTemplates\Create.cshtml" />
-    <Content Include="Views\CustomTemplates\Delete.cshtml" />
-    <Content Include="Views\CustomTemplates\Details.cshtml" />
-    <Content Include="Views\CustomTemplates\Edit.cshtml" />
-    <Content Include="Views\CustomTemplates\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
