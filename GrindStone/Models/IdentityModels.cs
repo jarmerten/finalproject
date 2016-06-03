@@ -39,7 +39,6 @@ namespace GrindStone.Models
         public DbSet<ConnectedJobs> ConnectedJobs { get; set; }
         public DbSet<Alert> Alert { get; set; }
         public DbSet<Products> Products { get; set; }
-        public DbSet<CustomTemplates> CustomTemplates { get; set; }
         public static ApplicationDbContext Create()
         {
             return new ApplicationDbContext();
