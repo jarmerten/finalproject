@@ -22,8 +22,7 @@ namespace GrindStone.Controllers
         public ActionResult Index()
         {
             string currentUserId = User.Identity.GetUserId();
-            ApplicationUser currentUser = db.Users.FirstOrDefault(x => x.Id == currentUserId);
-            var customWorkOrderForJob = db.CustomWorkOrderForJob.ToList().Where(c => c.Jobs.Id == currentUser);
+            var customWorkOrderForJob = db.CustomWorkOrderForJob.ToList().Where(j => j.Jobs.Id == currentUserId);
             return View(customWorkOrderForJob);
         }
 
@@ -59,7 +58,7 @@ namespace GrindStone.Controllers
         {
             if (ModelState.IsValid)
             {
-                customWorkOrderForJob.JobId = 
+                db.CustomWorkOrderForJob.Add(customWorkOrderForJob);
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
