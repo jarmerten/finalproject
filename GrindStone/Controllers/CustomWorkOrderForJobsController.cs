@@ -45,7 +45,8 @@ namespace GrindStone.Controllers
         // GET: CustomWorkOrderForJobs/Create
         public ActionResult Create()
         {
-            ViewBag.JobId = new SelectList(db.Jobs, "JobId", "Name");
+            string currentUserId = User.Identity.GetUserId();
+            ViewBag.JobId = new SelectList(db.Jobs.Where(c => c.Id == currentUserId), "JobId", "Name");
             return View();
         }
 
