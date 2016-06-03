@@ -24,9 +24,9 @@ namespace GrindStone.Models
         [Display(Name = "Description")]
         public string Description { get; set; }
 
-        [Required]
-        [Display(Name = "Start Day")]
-        public int Date{ get; set; }
+        [Required, MinLength(10), MaxLength(10)]
+        [Display(Name = "Start Date")]
+        public string Date{ get; set; }
 
         [Required]
         [Display(Name = "Days Long")]
