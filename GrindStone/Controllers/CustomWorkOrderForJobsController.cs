@@ -12,119 +12,116 @@ using Microsoft.AspNet.Identity;
 
 namespace GrindStone.Controllers
 {
-    public class JobsController : Controller
+    public class CustomWorkOrderForJobsController : Controller
     {
         private ApplicationDbContext db = new ApplicationDbContext();
         protected ApplicationDbContext ApplicationDbContext { get; set; }
         protected UserManager<ApplicationUser> UserManager { get; set; }
 
-
-        // GET: Jobs
+        // GET: CustomWorkOrderForJobs
         public ActionResult Index()
         {
             string currentUserId = User.Identity.GetUserId();
             ApplicationUser currentUser = db.Users.FirstOrDefault(x => x.Id == currentUserId);
-            var jobs = db.Jobs.ToList().Where(j => j.ApplicationUser == currentUser);
-            return View(jobs);
+            var customWorkOrderForJob = db.CustomWorkOrderForJob.ToList().Where(c => c.Jobs.Id == currentUser);
+            return View(customWorkOrderForJob);
         }
 
-        // GET: Jobs/Details/5
+        // GET: CustomWorkOrderForJobs/Details/5
         public ActionResult Details(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Jobs jobs = db.Jobs.Find(id);
-            if (jobs == null)
+            CustomWorkOrderForJob customWorkOrderForJob = db.CustomWorkOrderForJob.Find(id);
+            if (customWorkOrderForJob == null)
             {
                 return HttpNotFound();
             }
-            return View(jobs);
+            return View(customWorkOrderForJob);
         }
 
-        // GET: Jobs/Create
+        // GET: CustomWorkOrderForJobs/Create
         public ActionResult Create()
         {
-            ViewBag.Id = new SelectList(db.Users, "Id", "BusinessName");
+            ViewBag.JobId = new SelectList(db.Jobs, "JobId", "Name");
             return View();
         }
 
-        // POST: Jobs/Create
+        // POST: CustomWorkOrderForJobs/Create
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "JobId,Id,Name,Address,PhoneNumber,Email,Description")] Jobs jobs)
+        public ActionResult Create([Bind(Include = "JobWorkOrderId,JobId,Title,SectionTitle,Description,SectionTitle1,Description1,SectionTitle2,Description2,SectionTitle3,Description3,SectionTitle4,Description4,SectionTitle5,Description5,SectionTitle6,Description6,SectionTitle7,Description7,SectionTitle8,Description8,SectionTitle9,Description9")] CustomWorkOrderForJob customWorkOrderForJob)
         {
-            string currentUserId = User.Identity.GetUserId();
-            jobs.Id = currentUserId;
             if (ModelState.IsValid)
             {
-                db.Jobs.Add(jobs);
+                customWorkOrderForJob.JobId = 
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
 
-            ViewBag.Id = new SelectList(db.Users, "Id", "BusinessName", jobs.Id);
-            return View(jobs);
+            ViewBag.JobId = new SelectList(db.Jobs, "JobId", "Id", customWorkOrderForJob.JobId);
+            return View(customWorkOrderForJob);
         }
 
-        // GET: Jobs/Edit/5
+        // GET: CustomWorkOrderForJobs/Edit/5
         public ActionResult Edit(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Jobs jobs = db.Jobs.Find(id);
-            if (jobs == null)
+            CustomWorkOrderForJob customWorkOrderForJob = db.CustomWorkOrderForJob.Find(id);
+            if (customWorkOrderForJob == null)
             {
                 return HttpNotFound();
             }
-            ViewBag.Id = new SelectList(db.Users, "Id", "BusinessName", jobs.Id);
-            return View(jobs);
+            ViewBag.JobId = new SelectList(db.Jobs, "JobId", "Id", customWorkOrderForJob.JobId);
+            return View(customWorkOrderForJob);
         }
 
-        // POST: Jobs/Edit/5
+        // POST: CustomWorkOrderForJobs/Edit/5
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "JobId,Id,Name,Address,PhoneNumber,Email,Description")] Jobs jobs)
+        public ActionResult Edit([Bind(Include = "JobWorkOrderId,JobId,Title,SectionTitle,Description,SectionTitle1,Description1,SectionTitle2,Description2,SectionTitle3,Description3,SectionTitle4,Description4,SectionTitle5,Description5,SectionTitle6,Description6,SectionTitle7,Description7,SectionTitle8,Description8,SectionTitle9,Description9")] CustomWorkOrderForJob customWorkOrderForJob)
         {
             if (ModelState.IsValid)
             {
-                db.Entry(jobs).State = EntityState.Modified;
+                db.Entry(customWorkOrderForJob).State = EntityState.Modified;
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-            ViewBag.Id = new SelectList(db.Users, "Id", "BusinessName", jobs.Id);
-            return View(jobs);
-        } 
+            ViewBag.JobId = new SelectList(db.Jobs, "JobId", "Id", customWorkOrderForJob.JobId);
+            return View(customWorkOrderForJob);
+        }
 
-        // GET: Jobs/Delete/5
+        // GET: CustomWorkOrderForJobs/Delete/5
         public ActionResult Delete(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Jobs jobs = db.Jobs.Find(id);
-            if (jobs == null)
+            CustomWorkOrderForJob customWorkOrderForJob = db.CustomWorkOrderForJob.Find(id);
+            if (customWorkOrderForJob == null)
             {
                 return HttpNotFound();
             }
-            return View(jobs);
+            return View(customWorkOrderForJob);
         }
 
-        // POST: Jobs/Delete/5
+        // POST: CustomWorkOrderForJobs/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
         {
-            Jobs jobs = db.Jobs.Find(id);
-            db.Jobs.Remove(jobs);
+            CustomWorkOrderForJob customWorkOrderForJob = db.CustomWorkOrderForJob.Find(id);
+            db.CustomWorkOrderForJob.Remove(customWorkOrderForJob);
             db.SaveChanges();
             return RedirectToAction("Index");
         }

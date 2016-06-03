@@ -1,0 +1,159 @@
+﻿@model IEnumerable<GrindStone.Models.CustomWorkOrderForJob>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Jobs.Id)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Title)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.SectionTitle)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Description)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.SectionTitle1)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Description1)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.SectionTitle2)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Description2)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.SectionTitle3)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Description3)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.SectionTitle4)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Description4)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.SectionTitle5)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Description5)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.SectionTitle6)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Description6)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.SectionTitle7)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Description7)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.SectionTitle8)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Description8)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.SectionTitle9)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Description9)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Jobs.Id)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Title)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.SectionTitle)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Description)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.SectionTitle1)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Description1)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.SectionTitle2)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Description2)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.SectionTitle3)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Description3)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.SectionTitle4)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Description4)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.SectionTitle5)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Description5)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.SectionTitle6)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Description6)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.SectionTitle7)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Description7)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.SectionTitle8)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Description8)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.SectionTitle9)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Description9)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.JobWorkOrderId }) |
+            @Html.ActionLink("Details", "Details", new { id=item.JobWorkOrderId }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.JobWorkOrderId })
+        </td>
+    </tr>
+}
+
+</table>
