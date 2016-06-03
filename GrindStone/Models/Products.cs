@@ -25,7 +25,7 @@ namespace GrindStone.Models
         [Display(Name = "Price")]
         public double? UnitPrice { get; set; }
 
-        [Display(Name = "Sku")]
-        public int Sku { get; set; }
+        [Display(Name = "ASIN")]
+        public string ASIN { get; set; }
     }
 }
