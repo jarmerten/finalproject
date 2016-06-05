@@ -38,7 +38,7 @@
 @foreach (var item in Model) {
     <tr>
         <td>
-            <a class="btn btn-primary btn-lg" href="/Shifts/Index">View Job</a>
+            @Html.ActionLink("Edit", "Index", "Tasks", new { id = item.JobId }, null)
         </td>
         <td>
             @Html.DisplayFor(modelItem => item.ApplicationUser.BusinessName)

@@ -19,10 +19,10 @@ namespace GrindStone.Controllers
         protected UserManager<ApplicationUser> UserManager { get; set; }
 
         // GET: Tasks
-        public ActionResult Index()
+        public ActionResult Index(int? id)
         {
             string currentUserId = User.Identity.GetUserId();
-            var tasks = db.Tasks.ToList().Where(t => t.Jobs.Id == currentUserId);
+            var tasks = db.Tasks.ToList().Where(t => t.Jobs.JobId == id);
             return View(tasks.ToList());
         }
 
