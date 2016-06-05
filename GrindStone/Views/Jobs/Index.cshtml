@@ -38,7 +38,7 @@
 @foreach (var item in Model) {
     <tr>
         <td>
-            @Html.ActionLink("Edit", "Index", "Tasks", new { id = item.JobId }, null)
+            @Html.ActionLink("View Job", "Index", "Tasks", new { id = item.JobId }, null)
         </td>
         <td>
             @Html.DisplayFor(modelItem => item.ApplicationUser.BusinessName)
