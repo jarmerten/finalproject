@@ -38,6 +38,7 @@ namespace GrindStone.Models
         {
         }
         public DbSet<Jobs> Jobs { get; set; }
+        public DbSet<JobProducts> JobProducts { get; set; }
         public DbSet<CustomWorkOrderSections> CustomWorkOrderSections { get; set; }
         public DbSet<CustomWorkOrderForJob> CustomWorkOrderForJob { get; set; }
         public DbSet<Tasks> Tasks { get; set; }

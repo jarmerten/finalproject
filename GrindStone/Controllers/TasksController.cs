@@ -17,7 +17,19 @@ namespace GrindStone.Controllers
         private ApplicationDbContext db = new ApplicationDbContext();
         protected ApplicationDbContext ApplicationDbContext { get; set; }
         protected UserManager<ApplicationUser> UserManager { get; set; }
-
+        public ActionResult Calendar(int? id)
+        {
+            if (id == null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+            Jobs jobs = db.Jobs.Find(id);
+            if (jobs == null)
+            {
+                return HttpNotFound();
+            }
+            return View(jobs);
+        }
         // GET: Tasks
         public ActionResult Index(int? id)
         {

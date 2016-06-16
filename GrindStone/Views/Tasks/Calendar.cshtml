@@ -1,0 +1,44 @@
+﻿@model  GrindStone.Models.Jobs
+@{
+    ViewBag.Title = "Calendar";
+}
+@section scripts{
+<script type='text/javascript'>
+  
+$(document).ready(function() {
+   $('#calendar').fullCalendar({
+       header: {
+           left: 'prev,next today',
+           center: 'title',
+           right: 'month,agendaWeek,agendaDay'
+       },
+
+       defaultViews: 'agendaDay',
+       editable: true,
+       allDaySlot: false,
+       selectable: true,
+       slotMinutes: 15,
+       events: "/home/getevents",
+       businessHours: true,
+   });
+});
+
+</script>
+
+}
+<div class="jumbotron">
+    <h1>Task Calendar</h1>
+    @Html.ActionLink("New Task", "Create") 
+    <span>|</span>
+    @Html.ActionLink("View Task List", "Index", new { id = Model.JobId }, null)
+    <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+    @Html.ActionLink("Add Product", "Create", "JobProducts")
+    <span>|</span>
+    @Html.ActionLink("View Products", "Index", "JobProducts", new { id = Model.JobId }, null)
+</div>
+
+<div class="row">
+    <div class="col-md-12">
+        <div id="calendar"></div>
+    </div>
+</div>

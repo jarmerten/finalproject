@@ -9,8 +9,7 @@ namespace GrindStone
         public static void RegisterBundles(BundleCollection bundles)
         {
             bundles.Add(new ScriptBundle("~/bundles/jquery").Include(
-                        "~/Scripts/jquery-{version}.js",
-                        "~/Scripts/jquery-ui-{version}.js"
+                        "~/Scripts/jquery-{version}.js"
                         ));
 
             bundles.Add(new ScriptBundle("~/bundles/jqueryval").Include(
@@ -23,12 +22,22 @@ namespace GrindStone
 
             bundles.Add(new ScriptBundle("~/bundles/bootstrap").Include(
                       "~/Scripts/bootstrap.js",
-                      "~/Scripts/bootstrap-modal.js",
                       "~/Scripts/respond.js"));
 
             bundles.Add(new StyleBundle("~/Content/css").Include(
                       "~/Content/bootstrap.css",
                       "~/Content/site.css"));
+            bundles.Add(new StyleBundle("~/Content/fullcalendarcss").Include(
+                      "~/Content/themes/base/all.css",
+                      "~/Content/fullcalendar.css"));
+
+            //Calendar Script file
+
+            bundles.Add(new ScriptBundle("~/bundles/fullcalendarjs").Include(
+               "~/Scripts/jquery-ui-{version}.min.js",
+               "~/Scripts/moment.min.js",
+               "~/Scripts/fullcalendar.min.js"
+               ));
         }
     }
 }
